@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SheEO Masterclass — คุยกับลูกค้ายังไง ให้จบที่ดีลหลักแสนทุกครั้ง</title>
+  <meta name="description" content="SheEO Masterclass สด — เปิดเบื้องหลังทุกขั้นตอนที่ใช้ปิดดีล High Ticket สำหรับเจ้าของธุรกิจผู้หญิง" />
+
+  <!-- ⚙️ ตั้งค่า 3 จุดนี้ก่อนใช้งานจริง -->
+  <script>
+    const CONFIG = {
+      ZOOM_REGISTRATION_URL: "https://us06web.zoom.us/meeting/register/kI5qkXFcQ_SPArZ5dyBF-A",
+      ONE_ON_ONE_BOOKING_URL: "https://calendar.google.com/calendar/u/0/appointments/AcZssZ0mIDBPRbH1KTvAJocBfqcLMY2zf7JJivCTt_4=",
+      WEBINAR_DATE: "2026-07-26T18:00:00+07:00",
+      WEBINAR_DATE_LABEL: "26 July 2026 · BKK Time 18.00 น."
+    };
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Garet -> Poppins | The Seasons -> Cormorant Garamond (Latin) + Trirong (Thai) | body Prompt -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Trirong:wght@500;600&family=Poppins:wght@500;600;700&family=Prompt:wght@300;400;500&family=Sacramento&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            head: ['Cormorant Garamond','Trirong','serif'],
+            logo: ['Poppins','sans-serif'],
+            sans: ['Prompt','sans-serif'],
+            script: ['Sacramento','cursive']
+          },
+          colors: {
+            green: { DEFAULT:'#174e43', deep:'#2f483f' },
+            pearl: '#eed6c9',
+            sage: { DEFAULT:'#627c71', light:'#aab1a8' },
+            stone: { DEFAULT:'#e1dfd9', dark:'#cac9c6' },
+            ink: '#2e2e2e',
+            dollar: '#082821',
+            logobg: '#ebebeb'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{background:#f4f1ea}
+    .em{color:#174e43;font-weight:600}
+    .head-em{font-family:'Cormorant Garamond','Trirong',serif;font-style:italic;color:#627c71}
+    .toggle-on{width:34px;height:18px;border-radius:9999px;background:#627c71;position:relative;flex:none}
+    .toggle-on::after{content:'';position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:#fff}
+    .toggle-off{width:34px;height:18px;border-radius:9999px;background:rgba(255,255,255,.25);position:relative;flex:none}
+    .toggle-off::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff}
+    .logo-chip{background:#ebebeb;color:#2e2e2e;font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:.02em;padding:.35rem .7rem;border-radius:.6rem;font-size:1rem;line-height:1}
+    .logo-chip .d{color:#082821}
+  </style>
+</head>
+<body class="text-green font-sans antialiased">
+
+  <!-- TOP BAR -->
+  <div class="sticky top-0 z-50 bg-white/92 backdrop-blur border-b border-stone">
+    <div class="max-w-5xl mx-auto px-5 py-2.5 flex items-center justify-between gap-3">
+      <div class="font-head text-2xl leading-none text-green">SheEO <span class="head-em">Sales</span></div>
+      <div id="countdownTop" class="hidden sm:flex gap-3 text-center"></div>
+      <a href="#register" class="bg-green text-white text-xs md:text-sm font-500 px-4 py-2 rounded-full hover:bg-green-deep transition whitespace-nowrap">ตั้งเตือนในปฏิทิน</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="max-w-5xl mx-auto px-5 pt-10 pb-12">
+    <div class="bg-white rounded-[2rem] p-6 md:p-10 grid md:grid-cols-2 gap-8 items-center shadow-sm">
+      <div class="order-2 md:order-1">
+        <img src="images/aesthetic.jpg" alt="SheEO Masterclass" class="rounded-3xl w-full h-full object-cover shadow-md" />
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="text-sage font-500 tracking-[0.15em] text-xs uppercase mb-3">SheEO Masterclass · LIVE</p>
+        <h1 class="font-head text-4xl md:text-[3rem] leading-tight text-green mb-4">
+          คุยกับลูกค้ายังไง<br/>
+          ให้จบที่ <span class="em">ดีลหลักแสนทุกครั้ง</span>
+        </h1>
+        <p class="text-green-deep/70 mb-5 leading-relaxed">
+          เจ้าของธุรกิจโดยเฉพาะ <span class="em">"ผู้หญิง"</span> ฟังทางนี้ — นี่คือการเปิดเบื้องหลังทุกขั้นตอน
+          ที่ใช้ปิดดีล High Ticket จากคนที่เคยไม่กล้าบอกราคา สู่การปิดดีลหลักแสนหลักล้าน
+        </p>
+        <p class="text-green font-600 text-lg mb-6" id="dateLabel"></p>
+        <a href="#register" class="inline-block bg-pearl text-green font-600 px-8 py-3.5 rounded-full hover:brightness-95 transition shadow-sm">
+          ลงตารางแจ้งเตือนในปฏิทิน →
+        </a>
+        <p class="text-green-deep/50 text-xs mt-4">
+          รอไม่ไหว?
+          <a href="#" id="book1on1" class="text-green underline underline-offset-2 font-500">จองคุย 1:1 เลย</a>
+          <span class="block mt-0.5">(1:1 จำนวนจำกัด — ถ้าเต็ม รอเจอกันใน webinar น้า)</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- LEARN -->
+  <section class="max-w-5xl mx-auto px-5 py-10 text-center">
+    <h2 class="font-head text-3xl md:text-5xl text-green mb-10">
+      คุณจะได้เห็น <span class="head-em">ทุกขั้นตอน</span>
+    </h2>
+    <div class="grid md:grid-cols-4 gap-7 text-left md:text-center">
+      <div>
+        <div class="text-sage text-2xl mb-2">✨</div>
+        <p class="text-sm text-green-deep/80">วิธีที่เราปิดดีล High Ticket จริง ๆ หน้าตาเป็นยังไง — <span class="em">ทุกขั้นตอน</span></p>
+      </div>
+      <div>
+        <div class="text-sage text-2xl mb-2">✨</div>
+        <p class="text-sm text-green-deep/80">วิธีคุยที่ทำให้ลูกค้ารู้สึกเหมือนเราไม่ได้ขาย</p>
+      </div>
+      <div>
+        <div class="text-sage text-2xl mb-2">✨</div>
+        <p class="text-sm text-green-deep/80">เข้าใจว่าทำไมที่ผ่านมาคุณทำงานหนัก แต่ยอดขายไม่ขยับสักที</p>
+      </div>
+      <div>
+        <div class="text-sage text-2xl mb-2">✨</div>
+        <p class="text-sm text-green-deep/80">วิธีกล้าบอกราคา โดยไม่ลดราคาให้ตัวเองก่อนลูกค้าจะขอ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR YOU -->
+  <section class="max-w-3xl mx-auto px-5 py-8">
+    <div class="bg-pearl rounded-[2rem] p-8 md:p-10">
+      <h3 class="font-head text-3xl text-green mb-6">Masterclass นี้เพื่อคุณ ถ้า…</h3>
+      <ul class="space-y-4 text-green-deep/90">
+        <li class="flex gap-3 items-start"><span class="toggle-on mt-1"></span><span>คุณเป็นเจ้าของธุรกิจ แต่กลัวหรือไม่ชอบการขาย</span></li>
+        <li class="flex gap-3 items-start"><span class="toggle-on mt-1"></span><span>คุณไม่กล้าคิดเงิน หรือบอกราคาแล้วใจสั่น กังวลว่าลูกค้าจะไม่ซื้อ</span></li>
+        <li class="flex gap-3 items-start"><span class="toggle-on mt-1"></span><span>คุณทำงานหนักมาก แต่ยอดขายไม่ขยับสักที</span></li>
+        <li class="flex gap-3 items-start"><span class="toggle-on mt-1"></span><span>คุณอยากอยู่ใน Women Community ที่ Support กันจนสำเร็จ</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- NOT FOR YOU -->
+  <section class="max-w-3xl mx-auto px-5 py-8">
+    <div class="bg-green rounded-[2rem] p-8 md:p-10 text-white">
+      <h3 class="font-head text-3xl text-pearl mb-6">Masterclass นี้ยังไม่เหมาะ ถ้า…</h3>
+      <ul class="space-y-4 text-white/85">
+        <li class="flex gap-3 items-start"><span class="toggle-off mt-1"></span><span>คุณมองหาทางรวยเร็วแบบไม่ต้องลงมือทำ</span></li>
+        <li class="flex gap-3 items-start"><span class="toggle-off mt-1"></span><span>คุณยังไม่พร้อมจะเปลี่ยนแปลงอะไรตอนนี้</span></li>
+        <li class="flex gap-3 items-start"><span class="toggle-off mt-1"></span><span>คุณเชื่อว่าการขายคือการตื๊อ และไม่อยากเปลี่ยนความคิด</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOST -->
+  <section class="max-w-5xl mx-auto px-5 py-14">
+    <div class="grid md:grid-cols-5 gap-8 items-center">
+      <div class="md:col-span-2">
+        <img src="images/hero.jpg" alt="Jennidar (ชิ)" class="rounded-3xl w-full object-cover shadow-md" />
+      </div>
+      <div class="md:col-span-3">
+        <p class="font-script text-sage text-3xl mb-0">Hi, I'm</p>
+        <h2 class="font-head text-4xl text-green leading-none">Jennidar (ชิ)</h2>
+        <p class="text-green-deep/50 text-sm mb-4 mt-1">ผู้ก่อตั้ง SheEO Sales</p>
+        <div class="space-y-3 text-green-deep/75 leading-relaxed">
+          <p>ฉันเบื่อที่จะเห็นผู้หญิงเก่ง ๆ ขายตัวเองถูกเกินไป — ของดี บริการดี แต่ไม่กล้าพูด ไม่กล้าคิดเงิน และมักจะส่งเรื่องเงิน ๆ ทอง ๆ ให้คนอื่นจัดการแทน โดยเฉพาะเจ้าของธุรกิจ</p>
+          <p>ฉันอยากชวนให้พวกเขาดึงคืนอำนาจในตัวเองออกมาใช้อย่างเต็มที่ แล้วทำให้การขายกลายเป็นเรื่องที่ทุกคนทำได้อย่างเป็นธรรมชาติ และนั่นคือที่มาของการที่ฉันอยากแชร์ประสบการณ์การขายมากกว่า 10 ปีของตัวเองให้ทุกคนฟัง</p>
+        </div>
+        <p class="mt-5 font-500 text-green bg-stone inline-block px-4 py-2 rounded-xl">My Mission: ทำให้ผู้หญิงไทยกล้าลุกขึ้นมาขาย กล้าพูด และดึงอำนาจในตัวเองกลับคืนมา</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section id="register" class="max-w-md mx-auto px-5 py-10">
+    <div class="text-center mb-6">
+      <h2 class="font-head text-4xl text-green mb-2">ลงทะเบียน + ตั้งเตือนในปฏิทิน</h2>
+      <p class="text-sage font-500" id="dateLabel2"></p>
+      <div id="countdownBig" class="flex justify-center gap-3 mt-5"></div>
+    </div>
+    <form id="regForm" class="bg-white border border-stone rounded-[2rem] p-7 space-y-4 shadow-sm">
+      <div>
+        <label class="block text-xs text-green-deep/60 mb-1">ชื่อ</label>
+        <input required name="name" type="text" placeholder="ชื่อของคุณ"
+          class="w-full rounded-xl bg-stone/40 border border-stone-dark px-4 py-3 text-green placeholder-green-deep/35 focus:outline-none focus:border-sage" />
+      </div>
+      <div>
+        <label class="block text-xs text-green-deep/60 mb-1">อีเมล</label>
+        <input required name="email" type="email" placeholder="you@email.com"
+          class="w-full rounded-xl bg-stone/40 border border-stone-dark px-4 py-3 text-green placeholder-green-deep/35 focus:outline-none focus:border-sage" />
+      </div>
+      <div>
+        <label class="block text-xs text-green-deep/60 mb-1">เบอร์ติดต่อ</label>
+        <input name="phone" type="tel" placeholder="08x-xxx-xxxx"
+          class="w-full rounded-xl bg-stone/40 border border-stone-dark px-4 py-3 text-green placeholder-green-deep/35 focus:outline-none focus:border-sage" />
+      </div>
+      <button type="submit" class="w-full bg-green text-white font-600 text-lg py-4 rounded-full hover:bg-green-deep transition">
+        ลงทะเบียนเข้า Masterclass →
+      </button>
+      <p class="text-green-deep/40 text-[11px] text-center">เมื่อกดปุ่ม คุณยินยอมให้เราติดต่อกลับทางอีเมล/เบอร์</p>
+    </form>
+  </section>
+
+  <!-- CLOSING BAND -->
+  <section class="bg-pearl py-12 px-5 text-center">
+    <h2 class="font-head text-3xl md:text-5xl text-green mb-5">ที่นั่งมีจำนวนจำกัด</h2>
+    <a href="#register" class="inline-block bg-green text-white font-600 px-9 py-4 rounded-full hover:bg-green-deep transition">
+      ลงตารางแจ้งเตือนในปฏิทิน →
+    </a>
+  </section>
+
+  <footer class="bg-green text-white/60 text-center text-xs py-9 px-5">
+    <div class="font-head text-3xl text-white mb-1">SheEO <span class="italic text-pearl">Sales</span></div>
+    <p class="mt-3">Remote Sales Club for Women · ปิดการขายอย่างมั่นใจ จากที่ไหนก็ได้บนโลก</p>
+    <p class="mt-3 text-white/40">© SheEO Sales</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('#dateLabel, #dateLabel2').forEach(el => el.textContent = '📅 ' + CONFIG.WEBINAR_DATE_LABEL);
+
+    const b = document.getElementById('book1on1');
+    if (b) b.addEventListener('click', function(e){
+      e.preventDefault();
+      const u = CONFIG.ONE_ON_ONE_BOOKING_URL;
+      if (!u || u.includes('PASTE_1ON1')) { alert('⚠️ ยังไม่ได้ตั้งค่าลิงก์จอง 1:1'); return; }
+      window.location.href = u;
+    });
+
+    const target = new Date(CONFIG.WEBINAR_DATE).getTime();
+    function unit(n,l){
+      return `<div class="bg-white border border-stone-dark rounded-xl px-3 py-2 min-w-[58px]">
+        <div class="text-xl md:text-2xl font-600 text-green">${String(n).padStart(2,'0')}</div>
+        <div class="text-[9px] text-green-deep/50 uppercase tracking-wider">${l}</div></div>`;
+    }
+    function unitTop(n,l){
+      return `<div class="px-1"><div class="text-base font-600 text-green leading-none">${String(n).padStart(2,'0')}</div><div class="text-[8px] text-green-deep/50 uppercase">${l}</div></div>`;
+    }
+    function tick(){
+      const diff = target - Date.now();
+      const big = document.getElementById('countdownBig');
+      const top = document.getElementById('countdownTop');
+      if (diff <= 0){ if(big) big.innerHTML='<div class="text-green font-600">เริ่มแล้ว! เข้าร่วมเลย</div>'; if(top) top.innerHTML=''; return; }
+      const d=Math.floor(diff/86400000), h=Math.floor(diff/3600000)%24, m=Math.floor(diff/60000)%60, s=Math.floor(diff/1000)%60;
+      if(big) big.innerHTML = unit(d,'วัน')+unit(h,'ชม.')+unit(m,'นาที')+unit(s,'วิ');
+      if(top) top.innerHTML = unitTop(d,'วัน')+unitTop(h,'ชม.')+unitTop(m,'นาที')+unitTop(s,'วิ');
+    }
+    tick(); setInterval(tick,1000);
+
+    document.getElementById('regForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const url = CONFIG.ZOOM_REGISTRATION_URL;
+      if (!url || url.includes('PASTE_ZOOM')) { alert('⚠️ ยังไม่ได้ตั้งค่าลิงก์ Zoom — ใส่ ZOOM_REGISTRATION_URL ก่อนนะ'); return; }
+      window.location.href = url;
+    });
+  </script>
+</body>
+</html>
